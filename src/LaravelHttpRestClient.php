@@ -2,12 +2,6 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class testRestClient {
-	function test(){
-		return "omfg";
-	}
-}
-
 class LaravelHttpRestClient extends ServiceProvider {
 
 	/**
@@ -17,8 +11,8 @@ class LaravelHttpRestClient extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->app->singleton('\TestRestClient', function($app){
-			return new testRestClient();
+		$this->app->singleton('HttpRestClient', function($app){
+			return new \App\Providers\RestClient();
 		});
 	}
 
