@@ -1,0 +1,13 @@
+{
+    "name": "enathan/http-laravel-rest-client",
+    "description": "Simple REST client for Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "eNathan",
+            "email": "enathan.x@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
