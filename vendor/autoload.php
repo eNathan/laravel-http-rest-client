@@ -4,6 +4,7 @@
 
 require_once __DIR__ . '/composer' . '/autoload_real.php';
 
-echo "!!!!!!!!!!!!!!!!\n";
+echo "222222\n";
+
 
 return ComposerAutoloaderInit77d84b04ce2301aa617b8839daa41f96::getLoader();

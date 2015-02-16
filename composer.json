@@ -1,5 +1,5 @@
 {
-    "name": "enathan/http-laravel-rest-client",
+    "name": "enathan/laravel-http-rest-client",
     "description": "Simple REST client for Laravel",
     "license": "MIT",
     "authors": [
