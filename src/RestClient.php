@@ -17,14 +17,18 @@ class RestClient {
         // Perform some logic based on the request type
         switch($method){
             case "get":
-                $url = $url + "?" + http_build_query($data);
+                $url = $url . "?" . http_build_query($data);
+                break;
             case "post":
                 curl_setopt($curl, CURLOPT_POST, 1);
                 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                break;
             case "delete":
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "delete");
+                break;
             case "put":
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "put");
+                break;
         }
 
         // If headers are provided, add them in
@@ -38,7 +42,7 @@ class RestClient {
         ));
 
         $_response = curl_exec($curl);
-        $_responseCode = curl_getinfo(CURLINFO_HTTP_CODE);
+        $_responseCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
         return $_response;
     }
@@ -49,7 +53,7 @@ class RestClient {
      * @param array $data
      */
     public function get($url, $data = array(), $headers = array()){
-        $this->_call('get', $url, $data);
+        return $this->_call('get', $url, $data);
     }
 
     /**
@@ -58,7 +62,7 @@ class RestClient {
      * @param array $data
      */
     public function post($url, $data = array(), $headers = array()){
-        $this->_call('post', $url, $data);
+        return $this->_call('post', $url, $data);
     }
 
     /**
@@ -77,7 +81,7 @@ class RestClient {
      * @param array $data
      */
     public function put($url, $data = array(), $headers = array()){
-        $this->_call('put', $url, $data);
+        return $this->_call('put', $url, $data);
     }
 
     /**
