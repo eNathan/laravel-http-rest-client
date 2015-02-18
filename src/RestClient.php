@@ -71,7 +71,7 @@ class RestClient {
      * @param array $data
      */
     public function delete($url, $data = array(), $headers = array()){
-        $this->_call('delete', $url, $data);
+        return $this->_call('delete', $url, $data);
     }
 
 
